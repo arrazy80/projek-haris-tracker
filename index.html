@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ideal Body Weight Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Pelacak Berat Badan Ideal</h1>
+
+    <section class="card form-card">
+      <form id="trackForm">
+        <div class="row">
+          <label>Tinggi (cm)
+            <input type="number" id="height" min="50" max="300" required>
+          </label>
+          <label>Berat (kg)
+            <input type="number" id="weight" step="0.1" min="10" max="400" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>Usia
+            <input type="number" id="age" min="5" max="120">
+          </label>
+          <label>Jenis Kelamin
+            <select id="gender">
+              <option value="other">Lainnya</option>
+              <option value="female">Perempuan</option>
+              <option value="male">Laki-laki</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Simpan & Hitung</button>
+          <button type="button" id="clearHistory">Hapus Riwayat</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card results-card">
+      <h2>Hasil BMI</h2>
+      <div id="bmiResult" class="bmiResult">—</div>
+      <div id="bmiCategory" class="category">—</div>
+
+      <h3>Rentang Berat Ideal</h3>
+      <div id="idealRange">—</div>
+
+      <h3>Perkembangan</h3>
+      <div id="progress">—</div>
+    </section>
+
+    <section class="card history-card">
+      <h2>Riwayat Berat</h2>
+      <div class="chart-wrap"><svg id="weightChart" viewBox="0 0 300 80" preserveAspectRatio="none"></svg></div>
+      <ul id="historyList" class="historyList"></ul>
+    </section>
+
+    <footer class="note">Responsif · Minimal · Hanya menggunakan LocalStorage</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
